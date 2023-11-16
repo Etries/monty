@@ -21,6 +21,7 @@ void read_file(char *filename, stack_t **stack)
 		printf("Error: Can't open file %s\n", filename);
 		error_exit(stack);
 	}
+	read = getline(&buffer, &i, file);
 	while ((read = getline(&buffer, &i, file)) != -1)
 	{
 		line = parse_line(buffer);
@@ -59,18 +60,9 @@ instruct_func get_op_func(char *str)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
-		{"pchar", _pchar},
 		{"add", _add},
-		{"sub", _sub},
-		{"mul", _mul},
-		{"div", _div},
-		{"mod", _mod},
 		{"nop", _nop},
-		{"rotl", _rotl},
-		{"rotr", _rotr},
-		{"pstr", _pstr},
 		{"stack", _stack},
-		{"queue", _queue},
 		{NULL, NULL},
 	};
 
@@ -83,7 +75,6 @@ instruct_func get_op_func(char *str)
 	return (instruct[i].f);
 }
 
-#include "monty.h"
 
 /**
  * parse_line - parses a line for an opcode and arguments
@@ -93,28 +84,10 @@ instruct_func get_op_func(char *str)
  */
 char *parse_line(char *line)
 {
-	char *op_code;
+	char *op_command;
 
-	op_code = strtok(line, "\n ");
-	if (op_code == NULL)
+	op_command = strtok(line, "\n ");
+	if (op_command == NULL)
 		return (NULL);
-	return (op_code);
+	return (op_command);
 }
-
-/**
- * _nop - literally does nothing
- * @stack: pointer to the top of the stack
- * @line_number: the index of the current line
- *
- */
-void _nop(__attribute__ ((unused))stack_t **stack,
-	  __attribute__ ((unused))unsigned int line_number)
-{
-	;
-}
-/**
- * _pchar - prints the ASCII value of a number
- * @stack: pointer to the top of the stack
- * @line_number: the index of the current line
- *
- */

@@ -1,4 +1,5 @@
 #include "monty.h"
+int sq_flag;
 /**
  * main - driver function for monty program
  * @ac: int num of arguments
@@ -8,7 +9,7 @@
 int main(int ac, char **av)
 {
 	stack_t *stack;
-	
+
 	sq_flag = 0;
 	stack = NULL;
 	if (ac != 2)

@@ -1,6 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,12 +45,10 @@ void read_file(char *filename, stack_t **stack);
 void _pall(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
-void _pchar(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
-void _queue(stack_t **stack, unsigned int line_number);
 void _stack(stack_t **stack, unsigned int line_number);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
 stack_t *add_dnodeint(stack_t **head, const int n);

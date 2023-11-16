@@ -37,3 +37,41 @@ int isnumber(char *str)
 	}
 	return (1);
 }
+/**
+ * _nop - literally does nothing
+ * @stack: pointer to the top of the stack
+ * @line_number: the index of the current line
+ *
+ */
+void _nop(__attribute__ ((unused))stack_t **stack,
+	  __attribute__ ((unused))unsigned int line_number)
+{
+	;
+}
+
+/**
+ * _add - adds top of stack and second top of stack
+ *
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ */
+void _add(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		printf("L%d: can't add, stack too short\n", line_number);
+		error_exit(stack);
+	}
+	(*stack)->next->n += (*stack)->n;
+	_pop(stack, line_number);
+}
+/**
+ * _stack - sets sq_flag to stack
+ * @stack: pointer to stack list
+ * @line_number: line opcode occurs on
+ */
+void _stack(__attribute__ ((unused)) stack_t **stack,
+	    __attribute__ ((unused)) unsigned int line_number)
+{
+	sq_flag = 0;
+}
