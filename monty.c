@@ -1,5 +1,4 @@
 #include "monty.h"
-int sq_flag;
 /**
  * main - main func for monty interrprete
  * @ac: num of arguments
@@ -10,7 +9,6 @@ int main(int ac, char **av)
 {
 	stack_t *stack;
 
-	sq_flag = 0;
 	stack = NULL;
 	if (ac != 2)
 	{

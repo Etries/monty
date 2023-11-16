@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include <ctype.h>
 
-extern int sq_flag;
 /*--- Struct Definitions ---*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

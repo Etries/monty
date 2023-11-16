@@ -21,7 +21,6 @@ void read_file(char *filename, stack_t **stack)
 		printf("Error: Can't open file %s\n", filename);
 		error_exit(stack);
 	}
-	read = getline(&buffer, &i, file);
 	while ((read = getline(&buffer, &i, file)) != -1)
 	{
 		line = parse_line(buffer);
@@ -62,7 +61,6 @@ instruct_func get_op_func(char *str)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
-		{"stack", _stack},
 		{NULL, NULL},
 	};
 
