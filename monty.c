@@ -1,10 +1,10 @@
 #include "monty.h"
 int sq_flag;
 /**
- * main - driver function for monty program
- * @ac: int num of arguments
- * @av: opcode file
- * Return: 0
+ * main - main func for monty interrprete
+ * @ac: num of arguments
+ * @av: verctor args
+ * Return: 0 on success
  */
 int main(int ac, char **av)
 {
