@@ -109,15 +109,3 @@ void _pop(stack_t **stack, unsigned int line_number)
 	}
 	delete_dnodeint_at_index(stack, 0);
 }
-
-/**
- * _nop - literally does nothing
- * @stack: pointer to the top of the stack
- * @line_number: the index of the current line
- *
- */
-void _nop(__attribute__ ((unused))stack_t **stack,
-	  __attribute__ ((unused))unsigned int line_number)
-{
-	;
-}
