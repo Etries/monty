@@ -16,6 +16,6 @@ int main(int ac, char **av)
 		error_exit(&stack);
 	}
 	read_file(av[1], &stack);
-	free_dlistint(&stack);
+	free_dlistint(stack);
 	return (0);
 }
