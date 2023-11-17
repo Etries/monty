@@ -17,5 +17,19 @@ int main(int ac, char **av)
 	}
 	read_file(av[1], &stack);
 	free_dlistint(stack);
+	free_stack(stack);
 	return (0);
+}
+
+void free_stack(stack_t *head)
+{
+	stack_t *aux;
+
+	aux = head;
+	while (head)
+	{
+		aux = head->next;
+		free(head);
+		head = aux;
+	}
 }

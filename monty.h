@@ -55,4 +55,5 @@ void free_dlistint(stack_t *head);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void error_exit(stack_t **stack);
 int isnumber(char *str);
+void free_stack(stack_t *head);
 #endif
