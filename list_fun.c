@@ -71,7 +71,7 @@ int delete_dnodeint_at_index(stack_t **head, unsigned int index)
 	return (1);
 }
 /**
- * free_dlistint - free a list
+ * free_dlistint - frees a doubley linked list
  * @head: pointer to first node
  *
  */
@@ -79,8 +79,7 @@ void free_dlistint(stack_t *head)
 {
 	stack_t *tmp;
 
-	tmp = head;
-	while (head != NULL)
+	while (head)
 	{
 		tmp = head->next;
 		free(head);

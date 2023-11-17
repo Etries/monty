@@ -33,6 +33,7 @@ void read_file(char *filename, stack_t **stack)
 		if (s == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_count, line);
+			free(buffer);
 			error_exit(stack);
 		}
 		s(stack, line_count);
