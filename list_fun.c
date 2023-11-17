@@ -79,6 +79,7 @@ void free_dlistint(stack_t *head)
 {
 	stack_t *tmp;
 
+	tmp = head;
 	while (head != NULL)
 	{
 		tmp = head->next;
